@@ -1,0 +1,21 @@
+<h1>All Shares</h1>
+
+  <% @shares.each do |share| %>
+    Bar: <%= share.location_name %> <br>
+    Zip: <%= share.zip %> <br>
+    
+    <br>
+    
+    Drink Name: <%= share.drink_name %> <br>
+    Drink Size: <%= share.size %> <br>
+    Drink Price: <%= share.price %> <br>
+    
+    <br>
+    
+    Menu Link: <%= share.menu_link %> 
+    <br>
+<p><%= last_updated share %></p>
+    <br>
+
+    <% end %>
+

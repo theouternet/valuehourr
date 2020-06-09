@@ -1,0 +1,27 @@
+<h1> Share Detail </h1>
+Bar: <%= @share.location_name %> <br>
+Zip: <%= @share.zip %> <br>
+
+<br>
+
+Drink Name: <%= @share.drink_name %> <br>
+Drink Size: <%= @share.size %> <br>
+Drink Price: <%= @share.price %> <br>
+
+<br>
+
+Menu Link: <%= @share.menu_link %> 
+
+<br>
+<p><%= last_updated @share %></p>
+
+
+
+<br>
+<br>
+
+<%= (link_to 'Edit Share', edit_share_path(@share)) %>  |  
+          
+<%= (link_to 'Add New Share', new_share_path(@user)) %>  |  
+
+<%= (link_to 'Logout', logout_path) %>

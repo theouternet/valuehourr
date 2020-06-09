@@ -1,0 +1,21 @@
+<h1>Welcome To ValueHourr</h1>
+
+<h3>Transparency in Drink Pricing</h3> 
+
+<% if logged_in? %>
+
+<br><br>
+
+<p> <%= link_to "View Drink Prices", shares_path %>
+<br>
+<p> <%= link_to "Share a Drink Price", new_share_path %>
+
+<% else %>
+
+<p><%= link_to 'Log In', login_path %></p>
+
+  <p><%= link_to "Log In with Google", '/auth/google_oauth2' %></p>
+
+  <p><%= link_to 'Create New User', new_user_path %></p>
+
+<% end %>

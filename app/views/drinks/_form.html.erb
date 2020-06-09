@@ -1,0 +1,15 @@
+<%= form_for @drink do |f| %>
+ 
+    <%= f.label "Drink Name" %>
+    <%= f.text_field :name %>
+  
+    <%= f.label "Type" %>
+    <%= f.select :size, options_for_select(["Beer", "Wine", "Liquor or Mixed Drink", "Liquer", "Sake or Soju"]) %>
+  
+    <%= f.label "Sub-Type" %>
+    <%= f.select :size, options_for_select(["Lager", "Pilsner", "IPA", "Stout or Porter", "Hefeweisen", "Chardonnay", "Red", "Cab", "Port", "Whiskey", "Vodka", "Rum", "Tequila or Mezcal", "Other"]) %>
+  
+  
+  <%= f.submit %>
+  
+  <% end %>

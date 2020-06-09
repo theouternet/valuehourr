@@ -1,0 +1,7 @@
+<h1> My Account </h1> 
+
+<h2>Your Shares</h2>
+
+<% @current_user.shares.each do |s| %>
+    <%= link_to_share_name(s.location.name) %>
+<% end %>

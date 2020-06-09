@@ -1,0 +1,36 @@
+<% if @share.errors.any? %>
+  <div class="notice alert-warning">
+      <p>There were some errors:</p>
+      <br>
+        <% @rating.errors.full_messages.each do |message| %>
+          <p><%= message %></p>
+        <% end %>
+    </div>
+<% end %>
+
+
+<%= form_for @share do |f| %>
+
+  <%= f.label "Bar" %>
+  <%= f.text_field :location_name %>
+
+  <%= f.label "Zip" %>
+  <%= f.text_field :zip %>
+
+<%= f.label "Drink Name" %>
+<%= f.text_field :drink_name %>
+
+  <%= f.label "Drink Size" %>
+  <%= f.select :size, options_for_select(["Can or Bottle", "Pint Glass or Tallboy", "Shot or Single Mixed Drink", "Double", "Triple", "Wine Glass", "Small Sake", "Large Sake"]) %>
+
+  <%= f.label "Price" %>
+  <%= f.text_field :price %>
+
+  <%= f.label "Menu Link" %>
+  <%= f.text_field :menu_link %>
+
+
+<%= f.submit %>
+
+<% end %>
+

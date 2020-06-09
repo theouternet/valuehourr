@@ -1,0 +1,24 @@
+<h1>Sign In</h1>
+
+
+<% if @user.errors.any? %>
+<div class="notice alert-warning">
+  <p>There were some errors:</p>
+  <br>
+    <% @user.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+</div>
+<% end %>
+
+
+
+<%= form_tag ({ method: 'post', controller: 'sessions', action: 'create' }) do %>
+    Username: 
+    <%= text_field_tag :'user[username]' %>
+    Password: 
+    <%= password_field_tag :'user[password]' %>
+  
+    <%= submit_tag 'log in' %>
+  <% end %>
+
