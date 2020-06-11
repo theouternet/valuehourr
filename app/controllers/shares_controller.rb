@@ -12,6 +12,9 @@ class SharesController < ApplicationController
   
     def show
         @share = Share.find(params[:id])
+
+        render json: @share, status: 200
+
     end
   
     def new
