@@ -1,9 +1,26 @@
-<h1>Bar Detail</h1>
 
-    Bar Name: <%= @location.name %> <br>
-   
+<h1 class="locationName"><%= @location.name %></h1>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+    $(".js-next").on("click", function() {
+        var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+        $.get("/locations/" + nextId + ".json", function(data) {
+            var share = data;
+            $(".locationName").text(share["name"]);
+
+            $(".js-next").attr("data-id", data["id"]);
+
+
+        });
+    });
+});
+
+</script>
+
+----
+
     <h3>Shares:</h3>
-  
     <div id="submitted-shares">
       <% @location.shares.each do |share| %>
         <br>

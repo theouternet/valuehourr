@@ -5,7 +5,7 @@ class SharesController < ApplicationController
     def index
       if params[:location_id]
         @shares = Location.find(params[:location_id]).shares
-      else
+      else 
         @shares = Share.all
     end
   end 
@@ -13,8 +13,10 @@ class SharesController < ApplicationController
     def show
         @share = Share.find(params[:id])
 
-        render json: @share, status: 200
-
+        respond_to do |format|
+          format.html { render :show }
+          format.json { render json:  @share }
+        end 
     end
   
     def new

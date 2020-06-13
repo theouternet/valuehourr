@@ -1,3 +1,29 @@
+<a href="#" class="js-next" data-id="<%=@share.id%>">Next Share</a>
+<h1 class="shareSize"><%= @share.size %></h1>
+<h1 class="sharePrice"><%= @share.price %></h1>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+    $(".js-next").on("click", function() {
+        var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+        $.get("/shares/" + nextId + ".json", function(data) {
+            var share = data;
+            $(".shareSize").text(share["size"]);
+            $(".sharePrice").text(share["price"]);
+
+            $(".js-next").attr("data-id", data["id"]);
+
+
+        });
+    });
+});
+
+</script>
+
+
+
+----
+
 <h1> Share Detail </h1>
 Bar: <%= @share.location_name %> <br>
 Zip: <%= @share.zip %> <br>
@@ -14,7 +40,6 @@ Menu Link: <%= @share.menu_link %>
 
 <br>
 <p><%= last_updated @share %></p>
-
 
 
 <br>

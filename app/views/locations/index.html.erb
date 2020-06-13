@@ -1,9 +1,9 @@
-<h1>All Shares</h1>
-
-  <% @locations.each do |location| %>
-    
-    Location Name: <%= location.name %> <br>
-    <br>
+<h1>Locations</h1>
+<% @locations.each do |location| %>
+  <h3><%= location.name %></h3>
+  <div id="location-<%= location.id %>"><%= truncate(location.name) %></div>
+  <h2 id="order-<%= location.id %>"></h2>
+  <h2 id="orderCreated-<%= location.id %>"></h2>
   
-    <% end %>
+<% end %>
 
