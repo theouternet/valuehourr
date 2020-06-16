@@ -29,7 +29,7 @@ document.querySelector("div#locationResult").innerHTML = location.locationHTML()
             }
         
 
-            placeHTML() {
+            locationHTML() {
                 return `  
             <div id="locationResult">
             <h1>Bar Submission Successful:</h1>
