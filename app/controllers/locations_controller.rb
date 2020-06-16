@@ -33,13 +33,13 @@ class LocationsController < ApplicationController
         end
   
     def edit
-      @location = Location.find(id: params[:id])
+      @location = Location.find(params[:id])
 
     end
   
     def update
       @location = Location.find(params[:id])
-      @location.update(location_params)
+      if @location.update(location_params)
   
       if @location.save
         redirect_to @location
