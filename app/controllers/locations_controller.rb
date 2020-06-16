@@ -4,15 +4,10 @@ class LocationsController < ApplicationController
 
     def index
         @locations = Location.all
-        
-        respond_to do |format|
-          format.html { render :index }
-          format.json { render json: @locations }
-
 
         respond_to do |format|
           format.html { render :index }
-          format.json { render json: @locations }
+          format.json { render json: @locations, status: 200 }
         end 
 
     end
@@ -22,9 +17,9 @@ class LocationsController < ApplicationController
         @location = Location.find(params[:id])
 
         respond_to do |format|
-          format.html { render :index }
-          format.json { render json: @locations }
-    
+          format.html { render :show }
+          format.json { render json: @location, status: 200 }
+        end 
       end
   
     def new
