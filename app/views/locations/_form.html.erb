@@ -1,8 +1,18 @@
-<%= form_for @location do |f| %>
- 
+<%= form_for (@location) do |f| %>
+ <div class="field">
     <%= f.label "Bar" %>
     <%= f.text_field :name %>
-  
-  <%= f.submit %>
+
+    <br>
+
+  </div>
+
+  <%= f.submit "Post", class: "btn btn-primary" %>
   
   <% end %>
+
+  <div id = "locationResult">
+ <!-- <h2 id="locationName"></h2>
+  <br>
+  
+</div>

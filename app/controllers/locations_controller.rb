@@ -4,7 +4,10 @@ class LocationsController < ApplicationController
 
     def index
         @locations = Location.all
-      
+        
+        respond_to do |format|
+          format.html { render :index }
+          format.json { render json: @locations }
 
 
         respond_to do |format|
@@ -17,7 +20,12 @@ class LocationsController < ApplicationController
   
     def show
         @location = Location.find(params[:id])
-    end
+
+        respond_to do |format|
+          format.html { render :index }
+          format.json { render json: @locations }
+    
+      end
   
     def new
         @location = Location.new
@@ -26,11 +34,14 @@ class LocationsController < ApplicationController
     def create
         @location = Location.new(location_params)
         if @location.save
-            redirect_to location_path(@location)
-          else
-            render :new
-          end
+          respond_to do |format| 
+            format.html {redirect_to locations_path}
+            format.json {render json: @location, status: 200}
         end
+      else 
+        render 'new'
+      end 
+    end  
   
     def edit
       @location = Location.find(params[:id])
@@ -39,12 +50,11 @@ class LocationsController < ApplicationController
   
     def update
       @location = Location.find(params[:id])
-      if @location.update(location_params)
   
-      if @location.save
+      if @location.update(location_params)
         redirect_to @location
       else
-        render :edit
+        render 'edit'
       end    
     end
   
