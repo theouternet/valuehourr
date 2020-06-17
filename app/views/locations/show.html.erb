@@ -1,41 +1,12 @@
 
 <h1 class="locationName"><%= @location.name %></h1>
 
-<script type="text/javascript" charset="utf-8">
-$(function () {
-    $(".js-next").on("click", function() {
-        var nextId = parseInt($(".js-next").attr("data-id")) + 1;
-        $.get("/locations/" + nextId + ".json", function(data) {
-            var share = data;
-            $(".locationName").text(share["name"]);
-
-            $(".js-next").attr("data-id", data["id"]);
 
 
-        });
-    });
-});
 
-</script>
 
 ----
 
     <h3>Shares:</h3>
-    <div id="submitted-shares">
-      <% @location.shares.each do |share| %>
-        <br>
-        <div class="card" id="share-<%= share.id %>">
-          <div class="card-body">
-            <% if share.user != nil %>
-              <h6 class="card-subtitle mb-2 text-muted">Posted by:  <%= link_to share.user.username, share.user %></h6>
-            <% else %>
-              <h6 class="text-muted">By: anonymous</h6>
-            <% end %>
-  
-            <p class="card-text"><%= share.drink.name %></p>
-            <p class="card-text"><%= share.price %></p>
 
-          </div>
-        </div>
-      <%end%>
-    </div>
+    <h2><%= link_to "Click here", "#", {data: {location_id: @location.id}, id: "share_link"} %></h2>

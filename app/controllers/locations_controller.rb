@@ -15,6 +15,7 @@ class LocationsController < ApplicationController
   
     def show
         @location = Location.find(params[:id])
+        
 
         respond_to do |format|
           format.html { render :show }
