@@ -21,6 +21,7 @@ class SharesController < ApplicationController
   
     def new
         @share = Share.new(:user_id => current_user.id)
+        @share.location_id = params[:location_id]
        end
   
        def create
