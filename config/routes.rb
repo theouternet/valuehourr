@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
- resources :locations do
+ resources :locations #do
       # nested resource for shares
     resources :shares
-  end
+  #end
   
   resources :shares
 
