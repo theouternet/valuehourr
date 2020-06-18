@@ -50,7 +50,7 @@ class SharesController < ApplicationController
   private
   
     def share_params
-      params.require(:share).permit(:size, :price, :when_available, :zip, :menu_link, :location_name, :drink_name, :user_id)
+      params.require(:share).permit(:user_id, :location_id, :drink_name, :drink_type, :drink_sub_type, :size, :price, :when_available, :menu_link)
     end
   
 

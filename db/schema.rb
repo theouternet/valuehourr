@@ -12,16 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_05_08_221457) do
 
-  create_table "drinks", force: :cascade do |t|
-    t.string "name"
-    t.string "type"
-    t.string "sub_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "locations", force: :cascade do |t|
     t.string "name"
+    t.string "zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,8 +22,9 @@ ActiveRecord::Schema.define(version: 2020_05_08_221457) do
   create_table "shares", force: :cascade do |t|
     t.integer "user_id"
     t.integer "location_id"
-    t.integer "drink_id"
-    t.string "zip"
+    t.string "drink_name"
+    t.string "drink_type"
+    t.string "drink_sub_type"
     t.string "size"
     t.integer "price"
     t.string "when_available"
