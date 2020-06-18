@@ -1,0 +1,13 @@
+<%= form_for([@share.location, @share]) do |f| %>
+
+    <div class="field">
+      <%= f.text_area :price, placeholder: "Create a new Share" %>
+      <br>
+      <span>Select Your Location</span>
+      <%= f.collection_select :location_id, Location.order(:name),:id,:name, include_blank: true %>
+    </div>
+    <%= f.submit "Post", class: "btn btn-primary" %>
+  <% end %>
+
+
+  
