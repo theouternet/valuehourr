@@ -1,5 +1,5 @@
 class LocationSerializer < ActiveModel::Serializer
-    attributes :id, :name, :share_list
+    attributes :id, :name, :zip
     has_many :shares
 
 end 

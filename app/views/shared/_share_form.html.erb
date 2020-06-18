@@ -1,12 +1,35 @@
 <%= form_for([@share.location, @share]) do |f| %>
 
     <div class="field">
-      <%= f.text_area :price, placeholder: "Create a new Share" %>
-      <br>
+  
       <span>Select Your Location</span>
       <%= f.collection_select :location_id, Location.order(:name),:id,:name, include_blank: true %>
-    </div>
-    <%= f.submit "Post", class: "btn btn-primary" %>
+    
+
+
+      <%= f.label "Drink Name" %>
+      <%= f.text_field :drink_name %>
+    
+      <%= f.label "Type" %>
+      <%= f.select :drink_type, options_for_select(["Beer", "Wine", "Liquor or Mixed Drink", "Liquer", "Sake or Soju"]) %>
+    
+      <%= f.label "Sub-Type" %>
+      <%= f.select :drink_sub_type, options_for_select(["Lager", "Pilsner", "IPA", "Stout or Porter", "Hefeweisen", "Chardonnay", "Red", "Cab", "Port", "Whiskey", "Vodka", "Rum", "Tequila or Mezcal", "Other"]) %>
+    
+
+  <%= f.label "Drink Size" %>
+  <%= f.select :size, options_for_select(["Can or Bottle", "Pint Glass or Tallboy", "Shot or Single Mixed Drink", "Double", "Triple", "Wine Glass", "Small Sake", "Large Sake"]) %>
+
+  <%= f.label "Price" %>
+  <%= f.text_field :price %>
+
+  <%= f.label "Menu Link" %>
+  <%= f.text_field :menu_link %>
+    
+    
+      </div>
+  
+      <%= f.submit "Post", class: "btn btn-primary" %>
   <% end %>
 
 
