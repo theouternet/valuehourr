@@ -3,7 +3,7 @@
     <div class="field">
   
       <span>Select Your Location</span>
-      <%= f.collection_select :location_id, Location.order(:name),:id,:name, include_blank: true %>
+      <%= f.collection_select :location_id, Location.order(:name), :id, :name, include_blank: true %>
     
 
 

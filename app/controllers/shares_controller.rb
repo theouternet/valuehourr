@@ -1,5 +1,8 @@
 class SharesController < ApplicationController
 
+  before_action :logged_in?, only: [:create, :destroy]
+  before_action :correct_user, only: :destroy
+
     # before_action :require_login
 
     def index
@@ -51,6 +54,11 @@ class SharesController < ApplicationController
   
     def share_params
       params.require(:share).permit(:user_id, :location_id, :drink_name, :drink_type, :drink_sub_type, :size, :price, :when_available, :menu_link)
+    end
+
+    def correct_user
+      @share = current_user.shares.find_by(id: params[:id])
+      redirect_to root_url if @share.nil?
     end
   
 
