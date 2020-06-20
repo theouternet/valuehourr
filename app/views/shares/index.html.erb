@@ -1,8 +1,8 @@
 <h1>All Shares</h1>
 
   <% @shares.each do |share| %>
-    Bar: <%= share.location_name %> <br>
-    Zip: <%= share.zip %> <br>
+    Bar: <%= share.location.name %> <br>
+    Zip: <%= share.location.zip %> <br>
     
     <br>
     

@@ -14,7 +14,7 @@ function handleShareLinkClick() {
   
   function getShares(event) {
     event.preventDefault()
-    const shareID = event.target.dataset.shareId
+    const shareId = event.target.dataset.shareId
     fetch("/locations/"+ locationId + ".json").then(response => response.json()).then(data => displayShares(data.shares)) 
   }
   
@@ -27,7 +27,7 @@ function handleShareLinkClick() {
 
 
 function addLocationEventListener() {
-    $("form").submit(function(event) {
+    $(".locclass").submit(function(event) {
         event.preventDefault()
         var values = $(this).serializeArray()
         var posting = $.post("/locations.json", values)
