@@ -20,14 +20,14 @@ function handleShareLinkClick() {
   
   function displayShares(shares) {
     for (var i = 0; i < shares.length; i++) {
-      sharesList = "<li>" + shares[i].content + "</li>"
-      document.getElementById('target-id').innerHTML += sharesList
+      shareList = "<li>" + shares[i].content + "</li>"
+      document.getElementById('target-id').innerHTML += shareList
     }
   }
 
 
 function addLocationEventListener() {
-    $(".locclass").submit(function(event) {
+    $("form").submit(function(event) {
         event.preventDefault()
         var values = $(this).serializeArray()
         var posting = $.post("/locations.json", values)
