@@ -14,7 +14,7 @@ function handleShareLinkClick() {
   
   function getShares(event) {
     event.preventDefault()
-    const shareId = event.target.dataset.shareId
+    const locationId = event.target.dataset.locationId
     fetch("/locations/"+ locationId + ".json").then(response => response.json()).then(data => displayShares(data.shares)) 
   }
   
