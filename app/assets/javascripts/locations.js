@@ -20,7 +20,7 @@ function handleShareLinkClick() {
   
   function displayShares(shares) {
     for (var i = 0; i < shares.length; i++) {
-      sharesList = "<li>" + shares[i].content + "</li>"
+      sharesList = "<li>" + shares[i].drink_name + " - " + shares[i].price + "</li>"
       document.getElementById('target-id').innerHTML += sharesList
     }
   }
