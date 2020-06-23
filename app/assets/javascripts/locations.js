@@ -52,8 +52,8 @@ document.querySelector("div#locationResult").innerHTML = location.locationHTML()
                 return `  
             <div id="locationResult">
             <h1>Bar Submission Successful:</h1>
-            <h2>Bar Name:" ${this.name}</h2>
-            <h2>Bar Zip:" ${this.zip}</h2>
+            <h2>Bar Name: ${this.name}</h2>
+            <h2>Bar Zip: ${this.zip}</h2>
             </div> `
               }
             }
