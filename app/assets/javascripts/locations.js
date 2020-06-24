@@ -24,7 +24,7 @@ function handleShareLinkClick() {
       document.getElementById('target-id').innerHTML += sharesList
     }
   }
-
+// when clicking bar show page link from bar index pg, js button doesn't fire?
 
 function addLocationEventListener() {
     $("form").submit(function(event) {

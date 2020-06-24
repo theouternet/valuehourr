@@ -1,9 +1,7 @@
-<h1>Locations</h1>
+<h1>Bars</h1>
 <% @locations.each do |location| %>
-  <h3><%= location.name %></h3>
-  <div id="location-<%= location.id %>"><%= truncate(location.name) %></div>
-  <h2 id="order-<%= location.id %>"></h2>
-  <h2 id="orderCreated-<%= location.id %>"></h2>
+  <h3><%= link_to location.name, location_path(location) %> (<%= (location.zip) %>)</h3> 
+
   
 <% end %>
 
