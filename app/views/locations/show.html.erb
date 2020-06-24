@@ -1,16 +1,9 @@
 
-<h1 class="locationName"><%= @location.name %></h1>
-<br>
-<h2> <%= @location.zip %></h2>
-
-
-
-
-----
+<h1 class="locationName"><%= @location.name %> (<%= @location.zip %>)</h1>
 
     <h3>Shares:</h3>
 
-    <h2><%= link_to "Click here", "#", {data: {location_id: @location.id}, id: "share_link"} %></h2>
+    <h2><%= link_to "View Drink Reports", "#", {data: {location_id: @location.id}, id: "share_link"} %></h2>
 
     <div id="target-id"></div>
 
