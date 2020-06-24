@@ -20,8 +20,8 @@ function handleShareLinkClick() {
   
   function displayShares(shares) {
     for (var i = 0; i < shares.length; i++) {
-      shareList = "<li>" + shares[i].content + "</li>"
-      document.getElementById('target-id').innerHTML += shareList
+      sharesList = "<li>" + shares[i].drink_name + " - " + shares[i].price + "</li>"
+      document.getElementById('target-id').innerHTML += sharesList
     }
   }
 
@@ -52,8 +52,8 @@ document.querySelector("div#locationResult").innerHTML = location.locationHTML()
                 return `  
             <div id="locationResult">
             <h1>Bar Submission Successful:</h1>
-            <h2>Bar Name:" ${this.name}</h2>
-            <h2>Bar Zip:" ${this.zip}</h2>
+            <h2>Bar Name: ${this.name}</h2>
+            <h2>Bar Zip: ${this.zip}</h2>
             </div> `
               }
             }
