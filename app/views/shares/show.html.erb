@@ -43,10 +43,17 @@ Menu Link: <%= @share.menu_link %>
 
 
 <br>
+---
+<br>
 <br>
 
-<%= (link_to 'Edit Share', edit_share_path(@share)) %>  |  
-          
-<%= (link_to 'Add New Share', new_share_path(@user)) %>  |  
-
+<%= link_to "Add New Drink", new_share_path %>  |  
+<%= link_to "Add New Bar", new_location_path %>  |  
+<%= link_to "View Drinks", shares_path %>  |  
+<%= link_to "View Bars", locations_path %>
+<br>
+<br>
+<br>
+<br>
+<br>
 <%= (link_to 'Logout', logout_path) %>

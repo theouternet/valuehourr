@@ -1,3 +1,19 @@
 <h1>Edit Location</h1>
 
 <%= render partial: 'form' %>
+
+<br>
+---
+<br>
+<br>
+
+<%= link_to "Add New Drink", new_share_path %>  |  
+<%= link_to "Add New Bar", new_location_path %>  |  
+<%= link_to "View Drinks", shares_path %>  |  
+<%= link_to "View Bars", locations_path %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%= (link_to 'Logout', logout_path) %>

@@ -13,3 +13,19 @@
     <h2><%= link_to "Click here", "#", {data: {location_id: @location.id}, id: "share_link"} %></h2>
 
     <div id="target-id"></div>
+
+    <br>
+---
+<br>
+<br>
+
+<%= link_to "Add New Drink", new_share_path %>  |  
+<%= link_to "Add New Bar", new_location_path %>  |  
+<%= link_to "View Drinks", shares_path %>  |  
+<%= link_to "View Bars", locations_path %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%= (link_to 'Logout', logout_path) %>
